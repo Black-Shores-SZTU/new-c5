@@ -1,0 +1,602 @@
+basePath: /
+definitions:
+  indoor-navigation_backend_internal_dto.BuildingItem:
+    properties:
+      code:
+        example: C5
+        type: string
+      floors:
+        example: 5
+        type: integer
+      full_name:
+        example: C5 公共教学楼
+        type: string
+      name:
+        example: C5栋
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.BuildingsResponse:
+    properties:
+      items:
+        items:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.BuildingItem'
+        type: array
+    type: object
+  indoor-navigation_backend_internal_dto.BuildingsResponseEnvelope:
+    properties:
+      code:
+        example: 0
+        type: integer
+      data:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.BuildingsResponse'
+      message:
+        example: ok
+        type: string
+      request_id:
+        example: 8f3c2a7e
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.ClassroomCenter:
+    properties:
+      x:
+        example: 0
+        type: number
+      z:
+        example: 0
+        type: number
+    type: object
+  indoor-navigation_backend_internal_dto.ClassroomItem:
+    properties:
+      building:
+        example: C5
+        type: string
+      center:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.ClassroomCenter'
+      floor:
+        example: F1
+        type: string
+      name:
+        example: "101"
+        type: string
+      room_no:
+        example: "101"
+        type: string
+      type:
+        example: classroom
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.ClassroomsResponse:
+    properties:
+      items:
+        items:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.ClassroomItem'
+        type: array
+      total:
+        example: 2
+        type: integer
+    type: object
+  indoor-navigation_backend_internal_dto.ClassroomsResponseEnvelope:
+    properties:
+      code:
+        example: 0
+        type: integer
+      data:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.ClassroomsResponse'
+      message:
+        example: ok
+        type: string
+      request_id:
+        example: 8f3c2a7e
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.ErrorData:
+    properties:
+      details:
+        items:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorDetail'
+        type: array
+    type: object
+  indoor-navigation_backend_internal_dto.ErrorDetail:
+    properties:
+      field:
+        example: from.room_no
+        type: string
+      message:
+        example: required
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.ErrorEnvelope:
+    properties:
+      code:
+        example: 1001
+        type: integer
+      data:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorData'
+      message:
+        example: 参数校验失败
+        type: string
+      request_id:
+        example: 8f3c2a7e
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.FloorBounds:
+    properties:
+      height:
+        example: 4.2
+        type: number
+      max_x:
+        example: 44
+        type: number
+      max_z:
+        example: 33
+        type: number
+      min_x:
+        example: -44
+        type: number
+      min_z:
+        example: -33
+        type: number
+    type: object
+  indoor-navigation_backend_internal_dto.FloorItem:
+    properties:
+      bounds:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.FloorBounds'
+      code:
+        example: F1
+        type: string
+      level:
+        example: 1
+        type: integer
+      name:
+        example: 一层
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.FloorsResponse:
+    properties:
+      building:
+        example: C5
+        type: string
+      items:
+        items:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.FloorItem'
+        type: array
+    type: object
+  indoor-navigation_backend_internal_dto.FloorsResponseEnvelope:
+    properties:
+      code:
+        example: 0
+        type: integer
+      data:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.FloorsResponse'
+      message:
+        example: ok
+        type: string
+      request_id:
+        example: 8f3c2a7e
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.HealthResponse:
+    properties:
+      checks:
+        additionalProperties:
+          type: string
+        type: object
+      service:
+        example: c5-indoor-navigation-backend
+        type: string
+      status:
+        example: ok
+        type: string
+      time:
+        example: "2026-10-19T12:00:00Z"
+        type: string
+      version:
+        example: dev
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.NearbyItem:
+    properties:
+      code:
+        example: C5-F1-RESTROOM
+        type: string
+      floor:
+        example: F1
+        type: string
+      found:
+        example: true
+        type: boolean
+      hops:
+        example: 2
+        type: integer
+      name:
+        example: 卫生间
+        type: string
+      straight_distance_m:
+        example: 6
+        type: number
+      type:
+        example: restroom
+        type: string
+      x:
+        example: 0
+        type: number
+      z:
+        example: 6
+        type: number
+    type: object
+  indoor-navigation_backend_internal_dto.NearbyOrigin:
+    properties:
+      building:
+        example: C5
+        type: string
+      floor:
+        example: F1
+        type: string
+      room_no:
+        example: "101"
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.NearbyResponse:
+    properties:
+      items:
+        items:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.NearbyItem'
+        type: array
+      origin:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.NearbyOrigin'
+    type: object
+  indoor-navigation_backend_internal_dto.NearbyResponseEnvelope:
+    properties:
+      code:
+        example: 0
+        type: integer
+      data:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.NearbyResponse'
+      message:
+        example: ok
+        type: string
+      request_id:
+        example: 8f3c2a7e
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.RoomRef:
+    properties:
+      building:
+        example: C5
+        type: string
+      floor:
+        enum:
+        - F1
+        - F2
+        - F3
+        - F4
+        - F5
+        example: F1
+        type: string
+      room_no:
+        example: "101"
+        type: string
+    required:
+    - building
+    - floor
+    - room_no
+    type: object
+  indoor-navigation_backend_internal_dto.RoutePoint:
+    properties:
+      x:
+        example: 0
+        type: number
+      z:
+        example: 10
+        type: number
+    type: object
+  indoor-navigation_backend_internal_dto.RouteRequest:
+    properties:
+      allowed_floors:
+        example:
+        - F1
+        - F2
+        - F3
+        items:
+          type: string
+        type: array
+      from:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.RoomRef'
+      mode:
+        enum:
+        - combined
+        - elevator_only
+        example: combined
+        type: string
+      to:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.RoomRef'
+    required:
+    - from
+    - to
+    type: object
+  indoor-navigation_backend_internal_dto.RouteResponse:
+    properties:
+      distance_m:
+        example: 24
+        type: number
+      estimated_seconds:
+        example: 32
+        type: integer
+      from:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.RoomRef'
+      mode:
+        example: combined
+        type: string
+      segments:
+        items:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.RouteSegment'
+        type: array
+      to:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.RoomRef'
+      transitions:
+        items:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.RouteTransition'
+        type: array
+    type: object
+  indoor-navigation_backend_internal_dto.RouteResponseEnvelope:
+    properties:
+      code:
+        example: 0
+        type: integer
+      data:
+        $ref: '#/definitions/indoor-navigation_backend_internal_dto.RouteResponse'
+      message:
+        example: ok
+        type: string
+      request_id:
+        example: 8f3c2a7e
+        type: string
+    type: object
+  indoor-navigation_backend_internal_dto.RouteSegment:
+    properties:
+      distance_m:
+        example: 10
+        type: number
+      estimated_seconds:
+        example: 8.33
+        type: number
+      floor:
+        example: F1
+        type: string
+      points:
+        items:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.RoutePoint'
+        type: array
+    type: object
+  indoor-navigation_backend_internal_dto.RouteTransition:
+    properties:
+      distance_m:
+        example: 4
+        type: number
+      estimated_seconds:
+        example: 15
+        type: number
+      from_floor:
+        example: F1
+        type: string
+      to_floor:
+        example: F2
+        type: string
+      type:
+        example: stairs
+        type: string
+    type: object
+info:
+  contact: {}
+  description: C5 教学楼室内导航 MVP 接口
+  title: C5 Indoor Navigation API
+  version: "1.0"
+paths:
+  /api/v1/nearby:
+    get:
+      parameters:
+      - description: 楼栋编码
+        example: C5
+        in: query
+        name: building
+        required: true
+        type: string
+      - description: 楼层
+        enum:
+        - F1
+        - F2
+        - F3
+        - F4
+        - F5
+        in: query
+        name: floor
+        required: true
+        type: string
+      - description: 起点教室房号
+        example: "101"
+        in: query
+        name: room_no
+        required: true
+        type: string
+      - description: 设施类型，逗号分隔
+        example: restroom,elevator,stairs,exit,water
+        in: query
+        name: types
+        type: string
+      - description: 允许楼层，逗号分隔
+        example: F1,F2
+        in: query
+        name: allowed_floors
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.NearbyResponseEnvelope'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+      summary: 查询最近设施
+      tags:
+      - nearby
+  /api/v1/route:
+    post:
+      consumes:
+      - application/json
+      parameters:
+      - description: 路线请求
+        in: body
+        name: request
+        required: true
+        schema:
+          $ref: '#/definitions/indoor-navigation_backend_internal_dto.RouteRequest'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.RouteResponseEnvelope'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+        "422":
+          description: Unprocessable Entity
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+      summary: 规划室内路线
+      tags:
+      - route
+  /buildings:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.BuildingsResponseEnvelope'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+      summary: 楼栋列表
+      tags:
+      - catalog
+  /buildings/{code}/floors:
+    get:
+      parameters:
+      - description: 楼栋编码
+        example: C5
+        in: path
+        name: code
+        required: true
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.FloorsResponseEnvelope'
+        "404":
+          description: Not Found
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+      summary: 楼层列表
+      tags:
+      - catalog
+  /classrooms:
+    get:
+      parameters:
+      - description: 楼栋编码
+        example: C5
+        in: query
+        name: building
+        type: string
+      - description: 楼层
+        enum:
+        - F1
+        - F2
+        - F3
+        - F4
+        - F5
+        in: query
+        name: floor
+        type: string
+      - description: 房号或名称关键词
+        example: "10"
+        in: query
+        name: keyword
+        type: string
+      - description: 每页数量，默认 20，最大 100
+        example: 20
+        in: query
+        name: limit
+        type: integer
+      - description: 偏移量
+        example: 0
+        in: query
+        name: offset
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ClassroomsResponseEnvelope'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.ErrorEnvelope'
+      summary: 教室搜索
+      tags:
+      - catalog
+  /health:
+    get:
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.HealthResponse'
+        "503":
+          description: Service Unavailable
+          schema:
+            $ref: '#/definitions/indoor-navigation_backend_internal_dto.HealthResponse'
+      summary: 健康检查
+      tags:
+      - health
+schemes:
+- http
+swagger: "2.0"

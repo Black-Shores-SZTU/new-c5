@@ -1,0 +1,2 @@
+﻿floor,facility_code,facility_name,facility_type,corridor,center_x_m,center_y_m,size_x_m,size_y_m,access_x_m,access_y_m,served_floors,note
+F1,C5-F1-RESTROOM-01,卫生间,restroom,north,,,,,,,,示例行-测量值留空

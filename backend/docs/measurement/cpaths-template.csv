@@ -1,0 +1,2 @@
+﻿floor,room_no,door_node_code,adjacent_node_code,distance_m,note
+F1,101,C5-F1-D-101,C5-F1-N-01,,示例行-距离留空

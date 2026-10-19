@@ -1,0 +1,2 @@
+﻿floor_from,floor_to,from_node_code,to_node_code,distance_m,edge_type,bidirectional,note
+F1,F1,C5-F1-N-01,C5-F1-N-02,,corridor,TRUE,示例行-距离留空

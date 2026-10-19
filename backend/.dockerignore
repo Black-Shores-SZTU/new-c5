@@ -1,0 +1,16 @@
+.git
+.gitignore
+.idea
+.vscode
+bin
+dist
+logs
+backups
+screenshots
+coverage.out
+*.test
+*.exe
+.env
+.env.*
+!.env.example
+!.env.docker.example

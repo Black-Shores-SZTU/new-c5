@@ -1,0 +1,18 @@
+{
+  "distance_m": 0,
+  "estimated_seconds": 0,
+  "segments": [
+    {
+      "floor": "F1",
+      "points": [
+        {
+          "x": 0,
+          "z": 0
+        }
+      ],
+      "distance_m": 0,
+      "estimated_seconds": 0
+    }
+  ],
+  "transitions": []
+}

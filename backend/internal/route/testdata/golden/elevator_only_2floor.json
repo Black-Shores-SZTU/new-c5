@@ -1,0 +1,53 @@
+{
+  "distance_m": 26,
+  "estimated_seconds": 43,
+  "segments": [
+    {
+      "floor": "F1",
+      "points": [
+        {
+          "x": 0,
+          "z": 0
+        },
+        {
+          "x": 0,
+          "z": 2
+        },
+        {
+          "x": 9,
+          "z": 2
+        }
+      ],
+      "distance_m": 11,
+      "estimated_seconds": 9.17
+    },
+    {
+      "floor": "F2",
+      "points": [
+        {
+          "x": 9,
+          "z": 2
+        },
+        {
+          "x": 0,
+          "z": 2
+        },
+        {
+          "x": 0,
+          "z": 0
+        }
+      ],
+      "distance_m": 11,
+      "estimated_seconds": 9.17
+    }
+  ],
+  "transitions": [
+    {
+      "from_floor": "F1",
+      "to_floor": "F2",
+      "type": "elevator",
+      "distance_m": 4,
+      "estimated_seconds": 25
+    }
+  ]
+}

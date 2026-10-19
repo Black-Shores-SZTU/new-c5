@@ -1,0 +1,2 @@
+﻿building_code,building_name,full_name,floor_count,floor_code,floor_name,level,floor_height_m,origin_x_m,origin_y_m,orientation_deg,min_x_m,max_x_m,min_y_m,max_y_m,entrance_codes,elevator_served_floors,stairs_served_floors,note
+C5,C5栋,C5 公共教学楼,5,F1,一层,1,,,,,,,,,,,,示例行-测量值留空

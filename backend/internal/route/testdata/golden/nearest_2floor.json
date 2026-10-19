@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "type": "restroom",
+      "found": true,
+      "code": "C5-F1-RESTROOM",
+      "floor": "F1",
+      "hops": 2,
+      "straight_distance_m": 6
+    },
+    {
+      "type": "elevator",
+      "found": true,
+      "code": "C5-F1-ELEVATOR",
+      "floor": "F1",
+      "hops": 2,
+      "straight_distance_m": 9.22
+    },
+    {
+      "type": "stairs",
+      "found": true,
+      "code": "C5-F1-STAIRS",
+      "floor": "F1",
+      "hops": 3,
+      "straight_distance_m": 10
+    },
+    {
+      "type": "exit",
+      "found": true,
+      "code": "C5-F1-EXIT",
+      "floor": "F1",
+      "hops": 1,
+      "straight_distance_m": 2
+    },
+    {
+      "type": "water",
+      "found": true,
+      "code": "C5-F1-WATER",
+      "floor": "F1",
+      "hops": 2,
+      "straight_distance_m": 2.83
+    }
+  ]
+}

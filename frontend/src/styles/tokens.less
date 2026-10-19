@@ -1,0 +1,169 @@
+// ============================================================
+// 全局设计令牌（P1 已确认版）
+// 颜色、字号、间距、圆角、阴影统一在此维护
+// ============================================================
+
+// ---------- 主色 ----------
+@color-primary-500: #2B6BE5;
+@color-primary-600: #2258C8;
+@color-primary-700: #1B46A3;
+@color-primary-50: #EDF3FE;
+@color-primary-100: #D9E6FD;
+
+// ---------- 辅助色 ----------
+@color-accent-500: #0E9F8F;
+@color-accent-600: #0A8175;
+@color-accent-50: #E6F7F4;
+@color-warning-500: #E8A33D;
+@color-warning-600: #9A6700;
+@color-warning-50: #FFF6E8;
+
+// ---------- 中性灰阶 ----------
+@color-neutral-0: #FFFFFF;
+@color-neutral-50: #F6F8FB;
+@color-neutral-100: #EEF2F7;
+@color-neutral-200: #E2E8F0;
+@color-neutral-300: #C9D3E0;
+@color-neutral-400: #94A1B2;
+@color-neutral-500: #64748B;
+@color-neutral-700: #334155;
+@color-neutral-900: #0F172A;
+
+// ---------- 路线 / 起终点 ----------
+@color-route-500: #0A84E8;
+@color-start-500: #12B76A;
+@color-end-500: #E5484D;
+// 终点红深色阶：仅用于错误文字，保证白底对比度 ≥ 4.5:1
+@color-end-600: #B42318;
+
+// ---------- 地图 ----------
+@color-map-2d-canvas: #E4EAF2;
+@color-map-2d-floor: #F4F7FB;
+@color-map-2d-corridor: #EDF2F7;
+@color-map-2d-room: #FFFFFF;
+@color-map-2d-wall: #D3DDE9;
+@color-map-2d-label: #475569;
+@color-map-3d-bg: #101B2C;
+@color-map-3d-floor: #EDF2F7;
+@color-map-3d-room: #F7FAFD;
+@color-map-3d-wall: #F7FAFD;
+@color-map-3d-edge: #C7D4E4;
+
+// ---------- 字体 ----------
+@font-family-base: "HarmonyOS Sans SC", "PingFang SC", "Microsoft YaHei", -apple-system, "Segoe UI", sans-serif;
+@font-family-number: "DIN Alternate", "Bahnschrift", "HarmonyOS Sans SC", sans-serif;
+
+// ---------- 间距 ----------
+@space-1: 4px;
+@space-2: 8px;
+@space-3: 12px;
+@space-4: 16px;
+@space-6: 24px;
+@space-8: 32px;
+@space-10: 40px;
+@space-12: 48px;
+@space-16: 64px;
+
+// ---------- 圆角 ----------
+@radius-xs: 4px;
+@radius-sm: 8px;
+@radius-md: 12px;
+@radius-lg: 16px;
+@radius-full: 999px;
+
+// ---------- 阴影 ----------
+@shadow-1: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.06);
+@shadow-2: 0 6px 16px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.05);
+@shadow-3: 0 16px 40px rgba(15, 23, 42, 0.16), 0 4px 12px rgba(15, 23, 42, 0.06);
+
+// P1 主按钮专用柔和投影（使用既有主色/中性色透明度，不引入新颜色）
+@shadow-button: 0 10px 28px rgba(15, 23, 42, 0.45), 0 6px 18px rgba(43, 107, 229, 0.28);
+@shadow-button-hover: 0 14px 36px rgba(15, 23, 42, 0.5), 0 10px 26px rgba(43, 107, 229, 0.34);
+@shadow-button-active: 0 6px 16px rgba(15, 23, 42, 0.4), 0 3px 10px rgba(43, 107, 229, 0.22);
+
+// ---------- 动效 ----------
+@ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+@duration-fast: 150ms;
+@duration-base: 180ms;
+@duration-slow: 200ms;
+
+// ============================================================
+// CSS 变量出口：组件样式统一通过 var(--token) 使用
+// ============================================================
+:root {
+  --color-primary-500: @color-primary-500;
+  --color-primary-600: @color-primary-600;
+  --color-primary-700: @color-primary-700;
+  --color-primary-50: @color-primary-50;
+  --color-primary-100: @color-primary-100;
+
+  --color-accent-500: @color-accent-500;
+  --color-accent-600: @color-accent-600;
+  --color-accent-50: @color-accent-50;
+  --color-warning-500: @color-warning-500;
+  --color-warning-600: @color-warning-600;
+  --color-warning-50: @color-warning-50;
+
+  --color-neutral-0: @color-neutral-0;
+  --color-neutral-50: @color-neutral-50;
+  --color-neutral-100: @color-neutral-100;
+  --color-neutral-200: @color-neutral-200;
+  --color-neutral-300: @color-neutral-300;
+  --color-neutral-400: @color-neutral-400;
+  --color-neutral-500: @color-neutral-500;
+  --color-neutral-700: @color-neutral-700;
+  --color-neutral-900: @color-neutral-900;
+
+  --color-route-500: @color-route-500;
+  --color-start-500: @color-start-500;
+  --color-end-500: @color-end-500;
+  --color-end-600: @color-end-600;
+
+  --color-map-2d-canvas: @color-map-2d-canvas;
+  --color-map-2d-floor: @color-map-2d-floor;
+  --color-map-2d-corridor: @color-map-2d-corridor;
+  --color-map-2d-room: @color-map-2d-room;
+  --color-map-2d-wall: @color-map-2d-wall;
+  --color-map-2d-label: @color-map-2d-label;
+  --color-map-3d-bg: @color-map-3d-bg;
+  --color-map-3d-floor: @color-map-3d-floor;
+  --color-map-3d-room: @color-map-3d-room;
+  --color-map-3d-wall: @color-map-3d-wall;
+  --color-map-3d-edge: @color-map-3d-edge;
+
+  // 深色页面文字，均为既有中性色的语义别名
+  --color-text-on-dark: @color-neutral-0;
+  --color-text-on-dark-secondary: @color-neutral-400;
+  --color-text-on-dark-tertiary: @color-neutral-300;
+
+  --font-family-base: @font-family-base;
+  --font-family-number: @font-family-number;
+
+  --space-1: @space-1;
+  --space-2: @space-2;
+  --space-3: @space-3;
+  --space-4: @space-4;
+  --space-6: @space-6;
+  --space-8: @space-8;
+  --space-10: @space-10;
+  --space-12: @space-12;
+  --space-16: @space-16;
+
+  --radius-xs: @radius-xs;
+  --radius-sm: @radius-sm;
+  --radius-md: @radius-md;
+  --radius-lg: @radius-lg;
+  --radius-full: @radius-full;
+
+  --shadow-1: @shadow-1;
+  --shadow-2: @shadow-2;
+  --shadow-3: @shadow-3;
+  --shadow-button: @shadow-button;
+  --shadow-button-hover: @shadow-button-hover;
+  --shadow-button-active: @shadow-button-active;
+
+  --ease-standard: @ease-standard;
+  --duration-fast: @duration-fast;
+  --duration-base: @duration-base;
+  --duration-slow: @duration-slow;
+}

@@ -1,0 +1,2 @@
+﻿floor,room_no,room_name,room_type,corridor,center_x_m,center_y_m,size_x_m,size_y_m,door_x_m,door_y_m,open_side,note
+F1,101,101,classroom,north,,,,,,,,示例行-测量值留空

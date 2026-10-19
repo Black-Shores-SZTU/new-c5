@@ -1,0 +1,2 @@
+﻿node_code,node_name,node_type,floor,x_m,y_m,served_floors,ref_type,ref_code,note
+C5-F1-N-01,F1北走廊节点1,corridor_turn,F1,,,,,,示例行-测量值留空

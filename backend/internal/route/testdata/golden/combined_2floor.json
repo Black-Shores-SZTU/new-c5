@@ -1,0 +1,45 @@
+{
+  "distance_m": 24,
+  "estimated_seconds": 32,
+  "segments": [
+    {
+      "floor": "F1",
+      "points": [
+        {
+          "x": 0,
+          "z": 0
+        },
+        {
+          "x": 0,
+          "z": 10
+        }
+      ],
+      "distance_m": 10,
+      "estimated_seconds": 8.33
+    },
+    {
+      "floor": "F2",
+      "points": [
+        {
+          "x": 0,
+          "z": 10
+        },
+        {
+          "x": 0,
+          "z": 0
+        }
+      ],
+      "distance_m": 10,
+      "estimated_seconds": 8.33
+    }
+  ],
+  "transitions": [
+    {
+      "from_floor": "F1",
+      "to_floor": "F2",
+      "type": "stairs",
+      "distance_m": 4,
+      "estimated_seconds": 15
+    }
+  ]
+}
